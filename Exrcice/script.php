@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,25 +22,24 @@
 
 
 if(isset($_POST["btn"])){
-    if(isset($_POST['name'], $_POST['gender'])){
-        $name = $_POST['name'];
-        $gender = $_POST ['gender'];
+    if(empty($_POST['name'])){
+        echo "Enter your name";
+    }elseif(empty($_POST["age"]) || !is_numeric($_POST["age"])){
+        echo "Enter your age";
+    }elseif((!isset($_POST["gender"]))){
+        echo "Choose gender";
     }else{
-        echo "Entre your name";
-    }
-    if(isset($_POST['age'])){
-        if(is_numeric($_POST['age'])){
-            $age = $_POST['age'];
+        $name = $_POST["name"];
+        $age = $_POST["age"];
+        $gender = $_POST["gender"];
+
+        if($gender == "male"){
+            $gend = "Mr";
+        } else {
+            $gend = "Mme";
         }
-    }else{
-        echo "Entre age";
+        echo $gend. ", ".$name. " is ".$age. " years old";
     }
-    if($gender =="male"){
-         $gend = "Mr";
-    }else{
-         $gend = "Mme";
-    }
-    echo $gend.",".($name)." a " .($age). " ans";
 }
 ?>
 </body>
