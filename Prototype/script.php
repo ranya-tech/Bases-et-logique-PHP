@@ -54,7 +54,7 @@ if(isset($_POST["btn"])){
         if($_POST['Num2'] === ""){
             $msgs [] = "Entrer le nombre 2!<br>";
         }
-        if(!is_numeric ($_POST['Num1'])&& !is_numeric ($_POST['Num2'])){
+        if(!is_numeric ($_POST['Num1'])|| !is_numeric ($_POST['Num2'])){
             $msgs [] = "Entrer un nombre!<br>";
         }
         if($_POST["operation"] == "--"){
@@ -70,3 +70,4 @@ if(isset($_POST["btn"])){
 </body>
 
 </html>
+
