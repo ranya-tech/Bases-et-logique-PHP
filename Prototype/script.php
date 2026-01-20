@@ -32,7 +32,7 @@ function result($num1, $num2, $oprt){
             return $resultat = "$num1 * $num2 = ". ($num1 * $num2);
         case "/":
             if ($num2 == 0) {
-                "Erreur: division par zéro !";
+               return "Erreur: division par zéro !";
             }else{
                 return $resultat = "$num1 / $num2 = ". ($num1 / $num2);
             }
@@ -68,4 +68,5 @@ if(isset($_POST["btn"])){
 }
 ?>
 </body>
+
 </html>
